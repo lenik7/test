@@ -1,0 +1,431 @@
+{
+	"info": {
+		"_postman_id": "42814def-a5b0-43a5-acc7-33560d224126",
+		"name": "lesson1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "21362041-42814def-a5b0-43a5-acc7-33560d224126"
+	},
+	"item": [
+		{
+			"name": "GET_users",
+			"item": [
+				{
+					"name": "LIST USERS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "14f4ef0c-99f4-46b6-b5af-77b521d25333",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "df4b5bf3-1308-48bc-aa5d-c1814f8413c6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users?page=2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single users",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "80ed4095-f4fa-48f3-a1eb-850b0e3fd3b9",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "14c939da-0219-43e6-8d78-f6ac3bb4e840",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "963f7147-6faf-4983-9955-1d439b4c2e2a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST <RESOURCE>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "06ae8df9-59dc-4684-9e5e-87dabfdb6497",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "79813fbc-8f4b-47e2-8c8e-e36aed8dc368",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/unknown",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"unknown"
+							],
+							"query": [
+								{
+									"key": "vvvv",
+									"value": "123",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SINGLE <RESOURCE>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "93c70f6d-de03-481f-bdd1-a2fb1b71b5b6",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "521d4a20-60cd-403e-85cc-ec75a41afb7f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/unknown/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"unknown",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELAYED RESPONSE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "12baea19-408f-4759-ab63-68cdfb16d635",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f7f58534-b719-4390-b639-d2ccf246ba9c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users?delay=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "delay",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "9e3125bb-82fe-46d1-8e64-742fcb138f57"
+		},
+		{
+			"name": "REGISTRATION",
+			"item": [
+				{
+					"name": "REGISTER-SUCCESSFUL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c53b14e5-b3d8-4b0b-b49c-5bd3b9ef8d12",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "6e8ad13b-1930-4c97-9168-08103ed41507",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/register?page=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"register"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "827a41d0-7c4c-442c-9c17-4422b5e35aa1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "63450d58-7a99-485b-a19d-a559cbbed5b4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "2970b678-1c88-4f9a-82ca-a7f39053e59d"
+		},
+		{
+			"name": "REGISTER - UNSUCCESSFUL",
+			"item": [
+				{
+					"name": "Unsuccessful",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "216cabe7-e3d8-471f-99b6-db6c9e5a79c1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f3e55545-0191-47a7-b384-aef19c50b8a4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN - UNSUCCESSFUL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d05847dc-65ef-4458-b6b8-2e2408697858",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "9b26c36c-7570-4852-9e7b-b07911083fbf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "5bfbfeda-a86b-49aa-8c13-9559de937329"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e8e6deb0-c265-4f9f-bcfb-51ed953e5343",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6cef4589-da50-42c0-970c-74290a185ac7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "1bf2ecf7-480c-4462-8dbd-a2c561ad72a7",
+			"key": "url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
